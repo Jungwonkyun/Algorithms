@@ -1,8 +1,5 @@
 package swea_2071;
 import java.util.Scanner;
-import java.util.Arrays; 
-
-
 
 //2071. 평균값 구하기
 public class Swea_2071 {
