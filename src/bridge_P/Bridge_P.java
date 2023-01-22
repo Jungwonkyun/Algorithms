@@ -1,4 +1,5 @@
 package bridge_P;
+import java.util.Scanner;
 
 public class Bridge_P {
 
@@ -68,5 +69,5 @@ public class Bridge_P {
 			
 		
 		System.out.println(maxDistance); 
-
+	}
 }
