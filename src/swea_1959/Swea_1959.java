@@ -43,9 +43,7 @@ public class Swea_1959 {
 				}
 				
 			}
-			
-			System.out.println(String.format("#%d %d",i,maximum));
-			
+			System.out.println(String.format("#%d %d",i,maximum));	
 		}
 		
 	}
