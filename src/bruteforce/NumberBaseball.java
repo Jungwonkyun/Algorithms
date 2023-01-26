@@ -14,8 +14,8 @@ public class NumberBaseball {
 		N = sc.nextInt();
 		
 
-		int[][] digit = new int[N][3];
-		int[][] score = new int[N][2];
+		digit = new int[N][3];
+		score = new int[N][2];
 
 		for(int i = 0; i < N; i++) {
 			
@@ -31,11 +31,11 @@ public class NumberBaseball {
 		}
 		
 		//이거 왜 static으로 못 알아 먹음? 
-		System.out.println(compute_case(digit,score));
+		System.out.println(compute_case());
 	
 	}
 	
-	public static int compute_case(int[][]digit,int[][] score) {
+	public static int compute_case() {
 		
 		int result = 0;
 		for(int i = 1; i <= 9; i++) {
