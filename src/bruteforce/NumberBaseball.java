@@ -30,7 +30,6 @@ public class NumberBaseball {
 			score[i][1] = sc.nextInt();  //ball 
 		}
 		
-		//이거 왜 static으로 못 알아 먹음? 
 		System.out.println(compute_case());
 	
 	}
