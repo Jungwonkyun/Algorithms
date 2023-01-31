@@ -14,9 +14,7 @@ public class HoneyHouse {
 			start += 6*cnt;
 			cnt++;
 		}
-		
 		System.out.println(cnt);
-		
 	}
 
 }
