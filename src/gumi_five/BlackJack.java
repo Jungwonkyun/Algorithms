@@ -31,6 +31,7 @@ public class BlackJack {
 		}
 		
 		System.out.println(result);
+		
 	}
 
 }
