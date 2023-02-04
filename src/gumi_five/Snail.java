@@ -17,5 +17,4 @@ public class Snail {
 			System.out.println(res+1);
 		}
 	}
-
 }
