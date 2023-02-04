@@ -128,8 +128,6 @@ public class BabyShark {
 				
 				//이전에 측정된 최솟값 보다 작을 때 더 작은 거리에 있는 물고기를 먹는다 
 				if(distance[i][j]<di) {
-//					System.out.println("hello  "+i+"   "+j);
-//					System.out.println("change from "+di+ " to "+distance[i][j]);
 					eat_x = i;
 					eat_y = j;
 					di = distance[i][j];
