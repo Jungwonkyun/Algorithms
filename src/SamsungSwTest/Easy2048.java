@@ -2,7 +2,7 @@ package SamsungSwTest;
 
 import java.io.*;
 import java.util.*;
-public class easy2048 {
+public class Easy2048 {
     static int N;
     static int max = Integer.MIN_VALUE;
     static int[][] game;
