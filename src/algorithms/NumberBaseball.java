@@ -1,4 +1,4 @@
-package bruteforce;
+package algorithms;
 
 import java.util.*;
 
