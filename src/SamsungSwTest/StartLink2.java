@@ -1,9 +1,9 @@
-package algorithms;
+package SamsungSwTest;
 
 import java.util.*;
 import java.io.*;
 
-public class StartLink {
+public class StartLink2 {
     static int N;
     static boolean[] visited;
     static int[][] team;
@@ -21,26 +21,29 @@ public class StartLink {
                 team[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        compute(0,0);
+        
+        for(int i = 1; i<=N; i++) {
+        	compute(0,0,i);
+        }
+      
         System.out.println(difference);
-        System.exit(0);
+
     }
 
-    public static void compute(int idx,int depth) {
+    public static void compute(int idx,int depth,int end) {
 
-        if (depth == N / 2) {
+        if (depth == end) {
             check_ability();
             return;
         }
 
-        for (int i = idx; i < N; i++){
-            if(visited[i] == false) {
-                visited[i] = true;
-                compute(idx + 1, depth + 1);
-                visited[i] = false;
-            }
-        }
-    }
+        visited[depth] = false;
+        compute(idx + 1, depth + 1,end);
+        visited[depth] = true;
+        compute(idx + 1, depth + 1,end);        
+       
+     }
+  
 
     public static void check_ability() {
         int ability1 = 0;
