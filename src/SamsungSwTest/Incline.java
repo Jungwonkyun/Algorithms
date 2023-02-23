@@ -90,8 +90,6 @@ public class Incline {
 					seq = 1;
 				}
 				
-				
-				
 				//연속된 같은 높이 길이면
 				else if(Road[i][j] == prev) {
 					seq++;
