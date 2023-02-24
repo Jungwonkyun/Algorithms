@@ -70,7 +70,6 @@ public class MovePipeDP {
 					}
 
 					// 대각선 검사
-
 					if (mode == 1) {
 						if((i+1>=N)||(j+1>=N) || Room[i][j+1]==1||Room[i+1][j]==1|| Room[i+1][j+1]==1)continue;
 						
