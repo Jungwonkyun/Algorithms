@@ -21,7 +21,7 @@ class Node3 {
 	}
 }
 
-class EnermyInfo implements Comparable<EnermyInfo> {
+class EnermyInfo {
 
 	int x;
 	int y;
@@ -29,11 +29,6 @@ class EnermyInfo implements Comparable<EnermyInfo> {
 	public EnermyInfo(int x, int y) {
 		this.x = x;
 		this.y = y;
-	}
-
-	@Override
-	public int compareTo(EnermyInfo o) {
-		return this.y - o.y;
 	}
 
 }
