@@ -31,10 +31,9 @@ public class DessertCafe {
 				}
 			}
 		
-		
+			loop2:
 			for(int i = 0; i < N-2; i++) {
 				for(int j = 1; j< N-1; j++) {
-					loop1:
 					for(int k = 1; k < N-1; k++) {
 						for(int l = 1; l< N-1; l++) {
 							d1 = k;
@@ -44,11 +43,13 @@ public class DessertCafe {
 							System.out.println("x: "+i +" y: "+j+" d1: "+d1+" d2: "+d2+" type: "+type);
 							//if(i==0 && j == 4 && d1 == 2 && d2 ==6)System.out.println("----------------------------"+type);
 							
+							if(i==1)break loop2;
+							
 							//d1을 줄여야 하니까 더 이상 가능한 d1,d2조합이 나오지 않는다 
-							if(type==1)break loop1;
+							//if(type==1)
 							
 							//d1을 늘렸을 때 가능한 조합이 나올 수 있는 경우 
-							else if(type>=2)break;
+							//else if(type>=2)break;
 									
 						}
 					}	
@@ -70,7 +71,7 @@ public class DessertCafe {
 		int totalCnt = 0;
 		Set<Integer> dessertSet = new HashSet<>();
 		//from north to west
-		for(int i = 1; i <= d1; i++) {
+		for(int i = 1; i < d1; i++) {
 			System.out.println("north -> west "+(x+i)+" "+(y-i));
 			
 			//범위를 벗어나면 리턴 -> d1을 줄여야 한다 
@@ -88,10 +89,10 @@ public class DessertCafe {
 		
 		
 		//from west to south
-		for(int i = 1; i <= d2; i++) {
+		for(int i = 1; i < d2; i++) {
 			System.out.println("west -> south "+(x+d1+i)+" "+(y-d1+i)+" "+i);
 			//범위를 벗어나면 리턴 -> d2을 줄여야 한다 
-			if(x+d1+i>=N||y-d1+i>=N)return 2;
+			if(x+d1+i>=N||x+d1+i<0||y-d1+i>=N||y-d1+i<0)return 2;
 						
 			int nowDessert = cafe[x+d1+i][y-d1+i];
 			//만약 이미 포함한 디저트 가게라면 리턴 
@@ -105,7 +106,7 @@ public class DessertCafe {
 		
 		
 		//from north to East
-		for(int i = 1; i <= d2; i++) {
+		for(int i = 1; i < d2; i++) {
 			System.out.println("north -> east "+(x+i)+" "+(y+i)+" "+i);
 			//범위를 벗어나면 리턴 -> d2을 줄여야 한다 
 			if(x+i>=N||y+i>=N)return 3;
@@ -121,10 +122,10 @@ public class DessertCafe {
 		}
 		
 		//from East to South
-		for(int i = 1; i <= d1; i++) {
+		for(int i = 1; i < d1; i++) {
 			System.out.println("East -> south "+(x+d2+i)+" "+(y+d2-i));
 			//범위를 벗어나면 리턴 -> d1을 줄여야 한다 
-			if(x+i+d2>=N||y+d2-i<0)return 4;
+			if(x+i+d2>=N||y+d2-i<0||x+i+d2<0||y+d2-i>=N)return 4;
 			int nowDessert = cafe[x+d2+i][y+d2-i];
 								
 			//만약 이미 포함한 디저트 가게라면 리턴 
