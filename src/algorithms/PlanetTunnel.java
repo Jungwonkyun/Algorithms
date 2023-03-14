@@ -19,7 +19,6 @@ class StarInfo implements Comparable<StarInfo> {
 
 	@Override
 	public int compareTo(StarInfo o) {
-
 		return this.value - o.value;
 	}
 }
@@ -30,7 +29,6 @@ class StarEdge implements Comparable<StarEdge> {
 	int Value;
 
 	public StarEdge(int start, int end, int Value) {
-
 		this.start = start;
 		this.end = end;
 		this.Value = Value;
@@ -66,7 +64,8 @@ public class PlanetTunnel {
 		for (int i = 0; i < N; i++) {
 			parent[i] = i;
 		}
-
+		
+		//별 번호 i와 각각에 해당하는 x값, y값, z값에 대응하는 객체를 만들기 
 		for (int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
 			int xVal = Integer.parseInt(st.nextToken());
@@ -90,6 +89,7 @@ public class PlanetTunnel {
 		int prev = tempXList.get(0).starNum;
 		int prevGrid = tempXList.get(0).value;
 
+		//x값이 작은 것 부터 정렬된 자료로 부터 인접한 별들끼리의 거리를 구해서 전체 리스트에 넣는다 
 		for (int i = 1; i < N; i++) {
 			int next = tempXList.get(i).starNum;
 			int nextGrid = tempXList.get(i).value;
@@ -103,7 +103,8 @@ public class PlanetTunnel {
 
 		prev = tempYList.get(0).starNum;
 		prevGrid = tempYList.get(0).value;
-
+		
+		//y값이 작은 것 부터 정렬된 자료로 부터 인접한 별들끼리의 거리를 구해서 전체 리스트에 넣는다 
 		for (int i = 1; i < N; i++) {
 			int next = tempYList.get(i).starNum;
 			int nextGrid = tempYList.get(i).value;
@@ -119,6 +120,7 @@ public class PlanetTunnel {
 		prev = tempZList.get(0).starNum;
 		prevGrid = tempZList.get(0).value;
 
+		//z값이 작은 것 부터 정렬된 자료로 부터 인접한 별들끼리의 거리를 구해서 전체 리스트에 넣는다 
 		for (int i = 1; i < N; i++) {
 			int next = tempZList.get(i).starNum;
 			int nextGrid = tempZList.get(i).value;
@@ -129,9 +131,12 @@ public class PlanetTunnel {
 			prev = next;
 			prevGrid = nextGrid;
 		}
-
+		
+		//각각의 간선 weight를 가진 점들을 정렬한다
 		Collections.sort(StarEdgeInfo);
-
+		
+		//간선의 크기가 작은 것 부터 이미 연결된 집합인지 확인
+		//만약 연결되지 않았다면 union해주고 간선의 총합을 더해준다 
 		int cnt = 0;
 		int total = 0;
 		for (int i = 0; i < StarEdgeInfo.size(); i++) {
@@ -174,5 +179,4 @@ public class PlanetTunnel {
 			return a;
 		return parent[a] = find(parent[a]);
 	}
-
 }
