@@ -1,0 +1,69 @@
+package algorithms;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class PartSum {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int N = Integer.parseInt(br.readLine());
+		
+		String [] in = br.readLine().split(" ");
+		int [] solution = new int [N];
+		
+		for(int i = 0; i < N; i++) {
+			solution[i] = Integer.parseInt(in[i]);
+		}
+		
+		//이분 탐색을 위한 정렬 nlogn
+		Arrays.sort(solution);
+		
+		
+		int rs1 = 0;
+		int rs2 = 0;
+		
+		loop1:
+		for(int i = 0; i < N-2; i++) {
+			int start = i;
+			int end = N-1;
+			int mid = (int)(start+end)/2;
+			int sum = 0;
+			int result = Integer.MAX_VALUE;
+			
+			while(start < end) {
+				sum = solution[start]+solution[end];
+				
+				//System.out.println(start+" "+end+" "+sum);
+				
+				if(Math.abs(sum)<result) {
+					//System.out.println(start+" "+end);
+					System.out.println(solution[start]+" "+solution[end]+" "+sum);
+					rs1 = start;
+					rs2 = end;
+					result = Math.min(result,Math.abs(sum));
+				}
+				
+				if(sum == 0) {
+					rs1 = start;
+					rs2 = end;
+					break loop1;
+				}else if(sum < 0) {
+					start = mid+1;
+					mid = (int)(start+end)/2;
+					
+				}else {
+					end = mid-1;
+					mid = (int)(start+end)/2;
+				}
+				
+				
+
+			}	
+		}
+		System.out.println(solution[rs1]+" "+solution[rs2]);
+	}
+
+}

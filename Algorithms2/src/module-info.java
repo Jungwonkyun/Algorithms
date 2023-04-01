@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author wjddn
+ *
+ */
+module Algorithms {
+}
