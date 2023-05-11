@@ -1,9 +1,9 @@
 # Algorithms
 
-2023.04.07 현황 <br>
+2023.05 현황 <br>
 <br>
 
-![image](https://user-images.githubusercontent.com/43608973/230553591-2bd555a4-e177-43e3-b668-05330bd0efe0.png)
+![image](https://github.com/Jungwonkyun/Algorithms/assets/43608973/81fe1bdd-e9ed-4bb8-b32a-e48dbb9d4e68)
 <br>
 <br>
 <br>
@@ -98,5 +98,6 @@
 2023/05.09 BOJ.2212 센서(Gold5)<br>
 2023/05.10 BOJ.2470 두 용액(Gold5)<br>
 2023/05.10 BOJ.4811 알약(Gold5)<br>
-2023/05.10 BOJ.23352 (Gold5)<br>
-
+2023/05.10 BOJ.23352 방탈출(Gold5)<br>
+2023/05.11 BOJ.1461	(Gold5)<br>
+2023/05.11 BOJ.16500 문자열 판별(Gold5)<br>
