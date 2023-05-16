@@ -1,0 +1,61 @@
+package algorithms;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+class City{
+	int x;
+	int y;
+	int special;
+	
+	public City(int x, int y, int special) {
+		super();
+		this.x = x;
+		this.y = y;
+		this.special = special;
+	}
+	
+}
+
+public class Teleport {
+	static int M,T;
+	static boolean specialCity [];
+	static int [][] dist;
+	static City [] cityList;
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+		M = Integer.parseInt(st.nextToken());
+		T = Integer.parseInt(st.nextToken());
+		
+		//텔레포트가 가능한 도시 리스트
+		specialCity = new boolean [M];
+		dist = new int [M][M];
+		cityList = new City[M];
+		
+		for(int i = 0; i < M; i++) {
+			st = new StringTokenizer(br.readLine());
+			int s = Integer.parseInt(st.nextToken());
+			int x = Integer.parseInt(st.nextToken());
+			int y = Integer.parseInt(st.nextToken());
+			
+			if(s==1)specialCity[i] = true;
+			City city = new City(x, y, s);
+			cityList[i] = city;
+		}
+		
+		int TC = Integer.parseInt(br.readLine());
+		
+		for(int t = 0; t < TC; t++) {
+			st = new StringTokenizer(br.readLine());
+			int start = Integer.parseInt(st.nextToken());
+			int end = Integer.parseInt(st.nextToken());
+		}
+		
+	}
+
+}
