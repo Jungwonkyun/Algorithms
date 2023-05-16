@@ -1,0 +1,47 @@
+package algorithms;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class PrepareCamp {
+	static int N,L,R,X;
+	static int[] prob;
+	static int result;
+	static boolean[] visited;
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		
+		int N = Integer.parseInt(st.nextToken());
+		int L = Integer.parseInt(st.nextToken());
+		int R = Integer.parseInt(st.nextToken());
+		int X = Integer.parseInt(st.nextToken());
+		
+		prob = new int [N];
+		visited = new boolean[N];
+		
+		String [] in = br.readLine().split(" ");
+		for(int i = 0; i < N; i++) {
+			prob[i] = Integer.parseInt(in[i]);
+		}
+		
+		powerSet(0);
+	}
+	
+	public static void powerSet(int depth) {
+		
+		//2문제 이상일 때
+		if(depth>=2) {
+			
+		}
+		
+		visited[depth] = true;
+		
+		powerSet(depth+1);
+		
+		visited[depth] = false;
+	}
+
+}

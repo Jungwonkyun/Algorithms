@@ -1,5 +1,11 @@
 package algorithms;
 
+/*
+ * 쉬운 BFS, 정렬 문제일 수록 정확하고 빨리 풀자
+ * 너무 복잡하게 구현하고 있다는 생각이 든다면 제대로 구현하고 있는지 확인하자
+ * 
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
